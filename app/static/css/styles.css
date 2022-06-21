@@ -10,7 +10,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -302,10 +301,6 @@ svg {
   vertical-align: middle;
 }
 
-.page-image{
-  margin: 30; 
-}
-
 table {
   caption-side: bottom;
   border-collapse: collapse;
@@ -495,8 +490,6 @@ progress {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .display-1 {
