@@ -75,4 +75,7 @@ remote:
 To https://github.com/pattydaone/pattydaone.github.io.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
-(base) ]0;~/Project/omni/app[01;34m~/Project/omni/app[00m$ 
+(base) ]0;~/Project/omni/app[01;34m~/Project/omni/app[00m$ (base) ]0;~/Project/omni[01;34m~/Project/omni[00m$ ig[K[Kgit remote -v
+origin	https://github.com/ianwu13/SC22-BatchA-Gravity-Wells-Song-Belong.git (fetch)
+origin	https://github.com/ianwu13/SC22-BatchA-Gravity-Wells-Song-Belong.git (push)
+(base) ]0;~/Project/omni[01;34m~/Project/omni[00m$ 

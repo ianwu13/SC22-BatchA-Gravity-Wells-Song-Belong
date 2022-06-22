@@ -14,13 +14,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">Song Belong</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#eda">EDA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ml">Machine Learning</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,8 +31,8 @@
         <!-- Header-->
         <header class="bg-secondary bg-gradient text-white">
             <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Put Title Here</h1>
-                <p class="lead">Put other stuff here</p>
+                <h1 class="fw-bolder">Song Belong</h1>
+                <p class="lead">A Music Classification Product</p>
                 <a class="btn btn-lg btn-light" href="#about">See Project!</a>
             </div>
         </header>
@@ -41,12 +43,12 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>About our Project</h2>
-                        <p class="lead">We decided to create a song classification product that would accurately calculate whether a song belonged in a given playlist or not. Using specific attributes of a song, we used machine learning techniques to predict if a song could be included in a playlist.</p>
+                        <p class="lead">We decided to create a song classification product that would accurately calculate whether a song belonged in a given playlist or not. Using specific attributes of a song, like danceability, valence, and acousticness, we used machine learning techniques to predict if a song could be included in a playlist. Many different technologies were used to create this, such as:</p>
                         <ul>
-                            <li>Clickable nav links that smooth scroll to page sections</li>
-                            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                            <li>The Kaggle website to collect datasets</li>
+                            <li>The "pandas" library to manipulate and clean data</li>
+                            <li>Various external libraries for machine learning, such as "sklearn" and "tensorflow"</li>
+                            <li>Cocalc and Github to collaborate and run our code</li>
                         </ul>
                     </div>
                 </div>
@@ -54,45 +56,65 @@
         </section>
 
         <!-- EDA section-->
-        <section id="eda">
+        <section id="eda" class="bg-light">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h3>Correlation Matrix</h3>
                             <p class="lead">We use a correlation matrix (below) to visualize what variables from our dataset have strong interactions with each other.</p>
                             <br>
-                            <iframe width="900" height="900" title="Correlation Matrix" src="./static/Charts/cor_mat.html"></iframe> <br>
+                            <iframe width="900" height="900" title="Correlation Matrix" src="../static/Charts/cor_mat.html"></iframe> <br>
                       <h3>Pairplots</h3>
-                            <p class = "lead"> The visualization is essentially a more in depth correlation matrix, showing the correlation between data via multiple scatter plots. Diagonals are omitted due to the fact that data will always correlate with itself, making it unnecessary noise.</p>
+                            <p class = "lead"> This visualization is essentially a more in depth correlation matrix, showing the correlation between data via multiple scatter plots. Diagonals are omitted due to the fact that data will always correlate with itself, making it unnecessary noise.</p>
                             <br>
-                      <iframe width="1000" height="1000" src="./static/Charts/Scatter_Matrix.html"> </iframe> <br>
+                      <iframe width="1000" height="1000" src="../static/Charts/Scatter_Matrix.html"> </iframe> <br>
                             <h3>Scatterplot Between Loudness, Energy, and Acousticness</h3>
-                              <p class = "lead"> The visualization showcases the relationship between loudness, energy, and acousticness. There is a strong, positive, nonlinear correlation between loudness and energy while there is a negative correlation between acousticness and the other two variables.</p>
+                              <p class = "lead"> This visualization showcases the relationship between loudness, energy, and acousticness. There is a strong, positive, nonlinear correlation between loudness and energy while there is a negative correlation between acousticness and the other two variables.</p>
                               <br>
-                      <iframe width="900" height="900" src="./static/Charts/RelationshipBetweenLoudnessEnergyAcousticness.html"> </iframe> <br>
-                            <h3>Scatterplot Between Energy_pl, Time Signature_pl, and Loudness_pl</h3>
-                              <p class = "lead"> The visualization showcases the relationship between Energy_pl, Time Signature_pl, and Loudness_pl. There is a strong positive correlation between all three variables. Generally as energy_pl increases, time signature_pl and loudness_pl does as well. </p>
+                      <iframe width="900" height="900" src="../static/Charts/RelationshipBetweenLoudnessEnergyAcousticness.html"> </iframe> <br>
+                            <h3>Scatterplot Between Energy, Time Signature, and Loudness</h3>
+                              <p class = "lead"> The visualization showcases the relationship between Energy, Time Signature, and Loudness. There is a strong positive correlation between all three variables. Generally as energy increases, time signature and loudness does as well. </p>
                               <br>
-                      <iframe width="900" height="900" src="./static/Charts/RelationshipBetweenEnergyTimeSignatureLoudness.html"> </iframe> <br>
-                            <h3>Scatterplot Between Valence_pl, Danceability_pl, Instrumentalness_pl</h3>
-                              <p class = "lead"> The visualization showcases the relationship between valence_pl, danceability_pl, and instrumentalness_pl. There is a strong positive correlation between danceability_pl and valence_pl while there is a strong negative correlation between instrumentalness_pl with the two other variables. </p>
+                      <iframe width="900" height="900" src="../static/Charts/RelationshipBetweenEnergyTimeSignatureLoudness.html"> </iframe> <br>
+                            <h3>Scatterplot Between Valence, Danceability, and Instrumentalness</h3>
+                              <p class = "lead"> The visualization showcases the relationship between valence, danceability, and instrumentalness. There is a strong positive correlation between danceability and valence while there is a strong negative correlation between instrumentalness with the two other variables. </p>
                               <br>
-                  <iframe width="900" height="900" src="./static/Charts/RelationshipBetweenValenceDanceability,Intrumentalness.html"> </iframe> <br>
+                  <iframe width="900" height="900" src="../static/Charts/RelationshipBetweenValenceDanceability,Intrumentalness.html"> </iframe> <br>
                      <h3>Song Attributes and Positivity</h3>
                             <p class="lead">A scatter plot is used to visualize the correlation between <i>loudness, acousticness, and valence (overall positivity).</i> Notice the relationship between the three values. Happier songs tend to be louder, and sadder songs are more acoustic. You can see that as valence increases, our dots become darker, meaning that the songs are not very acoustic. The happiest songs tend to have medium to high volumes. </p>
                             <br>
-                            <iframe width="900" height="900" title="Effects of Loudness and Acousticness on Overall Positivity" src="./static/Charts/LOUDvsVALvsACOUSTICNESS.html"></iframe> <br>
-                      <h3>Dancebility vs energy</h3>
-                            <p class="lead">We use a correlation matrix (below) to visualize how dancebility, energy and tempo interact with each other. In the graph you can see that when the energy goes up so does the dancebility. You can also see that there is high dancebility when the tempo is between 100 and 150</p>
+                            <iframe width="900" height="900" title="Effects of Loudness and Acousticness on Overall Positivity" src="../static/Charts/LOUDvsVALvsACOUSTICNESS.html"></iframe> <br>
+                      <h3>Dancebility vs Energy</h3>
+                            <p class="lead">We use a correlation matrix (below) to visualize how danceability, energy and tempo interact with each other. In the graph you can see that when the energy goes up so does the danceability. You can also see that there is high danceability when the tempo is between 100 and 150.</p>
                             <br>
-                            <iframe width="900" height="900" title="Correlation Matrix" src="./static/Charts/dance__vs_energy_tempo.html"></iframe> <br>
+                            <iframe width="900" height="900" title="Correlation Matrix" src="../static/Charts/dance__vs_energy_tempo.html"></iframe> <br>
+                       <h3>Distribution of Loudness</h3>
+                            <p class="lead">This histogram depicts the distribution of loudness throughout the songs. It shows that the distribution is left-skewed, unimodal with a center at around 22 and a spread from -15 to -32. There are no significant outliers. </p>
+                            <br>
+                            <iframe width="900" height="900" title="Distribution of Loudness" src="../static/Charts/LoudnessDistribution.html"></iframe> <br>
+                      <h3>Three-Way-Boxplot</h3>
+                            <p class="lead">This boxplot depicts the relation between time signature, energy, and key. </p>
+                            <br>
+                            <iframe width="1400" height="800" title="Three Way Boxplot" src="../static/Charts/ThreeWayBoxplot.html"></iframe> <br>
+                      <h3>Two-Way-Boxplot</h3>
+                            <p class="lead">This boxplot depicts the relation between key and acousticness. </p>
+                            <br>
+                            <iframe width="1200" height="800" title="Two Way Boxplot" src="../static/Charts/TwoWayBoxplot.html"></iframe> <br>
+                      <h3>Violin Plot Between Time_Signature and Loudness</h3>
+                            <p class="lead">Violin plots depict the summary statistics and density curves between two variables. This violin plot relates time_signature and loudness</p>
+                            <br>
+                            <iframe width="900" height="650" title="Violin Plot Between Time_Signature and Loudness" src="../static/Charts/ViolinPlot1.html"></iframe> <br>
+                      <h3>Violin Plot Between Time_Signature and Danceability</h3>
+                            <p class="lead">This violin plot relates time_signature and danceability showing that at a time_signature of 4, </p>
+                            <br>
+                            <iframe width="900" height="650" title="Violin Plot Between Time_Signature and Danceability" src="../static/Charts/ViolinPlot2.html"></iframe> <br>
                        </div>
                 </div>
             </div>
         </section>
 
         <!-- ML section-->
-        <section class="bg-light" id="services">
+        <section id="ml">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
@@ -103,7 +125,7 @@
                         <p class="lead">SVM is a supervised machine learning model. It is a classification method which groups data points into different categories using a hyperplane. Because SVMs classify data point based on their location, this machine learning method requires data with clustering to perform well. To train an SVM, we used the SVC module from the SKLearn library. However, we found this to be too slow, and switched to the more optimized LinearSVC module.</p>
 
                         <h3>Random Forest</h3>
-                        <p class="lead">	Decision trees are tree-like models consisting of branches and leaves. Leaves are conditions that, when met, pass the state to the next branch where the process continues. <br><br>
+                        <p class="lead">	Decision trees are a machine learning model that uses a specific condition on a "leaf" to classify data. If the condition is met, the data is passed to the right leaf, and if the condition is not met, the data is passed to the left leaf. Each leaf after will then repeat the process until the data is properly classified, or until the maximum depth is reached.  <br><br>
 
 Random forests consist of a “forest” of decision trees. They operate by first bootstrapping the data, which is basically taking random samples from the data, feeding the bootstrapped data to the decision trees until they finish, tallying up the results, and returning whichever result had the most tallies. Think of a jury system: each tree in the forest produces a “jury,” and then the votes are pooled and the winning product is returned.
 </p>
@@ -117,7 +139,7 @@ Random forests consist of a “forest” of decision trees. They operate by firs
         </section>
 
         <!-- Conclusion section-->
-        <section id="contact">
+        <section id="conclusion" class="bg-light">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
@@ -131,7 +153,7 @@ Random forests consist of a “forest” of decision trees. They operate by firs
         </section>
 
         <!-- Team section-->
-        <section id="team" class="bg-light">
+        <section id="team">
                 <div class="container px-5", style="margin-bottom: 3rem !important;">
                   <div class="row gx-5 justify-content-center">
                         <div class="col-lg-9 col-xl-6">
@@ -192,6 +214,7 @@ Random forests consist of a “forest” of decision trees. They operate by firs
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Intern</div>
                                     <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">Ian Wu</h5></a>
+                                  <a class="text-decoration-none link-dark stretched-link" >I'm a data science intern , going into my first semester as a master's student in applied data science this fall! I'm passionate about AI, and my academic interests focus on leveraging NLP to make qualitative data actionable.</a>
                                 </div>
                             </div>
                         </div>
