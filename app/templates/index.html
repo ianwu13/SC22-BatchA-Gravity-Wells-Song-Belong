@@ -58,7 +58,7 @@
     <header class="bg-secondary bg-gradient text-white tmp">
       <div class="container px-4 text-center">
         <h1 class="fw-bolder">Song Belong</h1>
-        <p class="lead">A Music Classification Product <br> Gravity Wells Baby</p>
+        <p class="lead">A Music Classification Product <br> by the Gravity Wells</p>
         <a class="btn btn-lg btn-light" href="#about">See Project!</a>
       </div>
     </header>
@@ -86,8 +86,8 @@
               </li>
               <li>Cocalc and Github to collaborate and run our code</li>
             </ul>
-            <p class="lead todo">
-              Classification probelm, challenges, motivation
+            <p class="lead">
+              With music being an important part of our lives, we decided to create a machine that could predict whether a song belongs in a playlist by comparing it to songs already in it. We faced many challenges such as having problems while cleaning up the data or our machine learning algorithm not being able to make accurate predictions. Furthermore, due to our <a href="#eda">data</a> being extremely large, we suffered problems with Cocalc servers crashing.
             </p>
           </div>
         </div>
@@ -101,17 +101,16 @@
           <div class="col-lg-9">
             <h1 id="top-level-heading">🕵 Exploratory Data Analysis (EDA)</h1>
             <br />
-            <p class="lead todo">
-              OVERVIEW, properties of dataset (size, general overview of what
-              features mean), source of the dataset, maybe more?
-            </p>
+            <p class="lead">
+One of our datasets, collected from Kaggle, had 12.8 million songs and their properties. We also needed to have data for individual playlists, which included 1.2 million songs and their acoustic features. After merging these two sets into one large dataframe, we had a list of about 5.8 million songs and their attributes, as well as the playlist they belonged to. While assorting and cleaning our data, we ran into a variety of problems, such as the Cocalc servers crashing due to the size of our data or column names not being uniform. 
+           </p>
           </div>
           <div class="col-lg-8">
             <h3>Correlation Matrix</h3>
-            <p class="lead todo">
-              We use a correlation matrix to visualize what variables from our
-              dataset have strong interactions with each other. INTERTPRET
-              CHART, WHAT DOES IT MEAN/SHOW
+            <p class="lead">
+              We use a correlation matrix—shown as a heatmap— to visualize what variables from our
+              dataset have strong interactions with each other. Using this information, we can make estimates about the weight of a value in the learning process or even rid our data of unneeded attributes. In a heatmap, a brighter color translates to a higher correlation between the x and y values. A 1 is a perfect linear correlation (as one value increases, so does the other) and 0 means no correlation at all. You can see strong relationships in pairs like <i>energy and loudness</i> or <i>danceability and valence.</i>
+              Our plots below are to visualize and explain some of these correlations.
             </p>
             <br />
             <iframe
@@ -215,7 +214,7 @@
             <h3>Distribution of Loudness</h3>
             <p class="lead">
               This histogram depicts the distribution of loudness throughout the
-              songs. It shows that the distribution is right-skewed, unimodal
+              songs. It shows that the distribution is right-skewed and unimodal,
               with a center at around 22 and a spread from -15 to -32. There are
               no significant outliers.
             </p>
@@ -229,38 +228,38 @@
             <h3>Three-Way-Boxplot</h3>
             <p class="lead">
               This boxplot depicts the relation between time signature, energy,
-              and key.
+              and key. Within Time_signatures 3, 4, 5, there is fairly even distribution between the data points
             </p>
             <br />
             <iframe
               width="800"
               height="650"
-              title="Two Way Boxplot"
-              src="../static/Charts/TwoWayBoxplot.html"
+              title="Three Way Boxplot"
+              src="../static/Charts/ThreeWayBoxplot.html"
             ></iframe>
             <h3>Violin Plot Between Time_Signature and Loudness</h3>
-            <p class="lead todo">
+            <p class="lead">
               Violin plots depict the summary statistics and density curves
-              between two variables. This violin plot relates time_signature and
-              loudness. ADD A LOT OF EXPLANATION
+              between two variables, where a greater width correlates with a greater frequency. This violin plot relates time_signature 
+              loudness. Across all values of time_signature, the distribution of loudness is unimodal and left-skewed. Time_Signature 0 produces the most variability across loudness while time_signature 5 has the least variability. Across all values of time_signature, there is an approximate peak or center at 20.
             </p>
             <br />
             <iframe
               width="800"
               height="700"
-              title="Three Way Boxplot"
-              src="../static/Charts/ThreeWayBoxplot.html"
+              title="Violin Plot Between Time_Signature and Loudness"
+              src="../static/Charts/ViolinPlot1.html"
             ></iframe>
             <h3>Two-Way-Boxplot</h3>
             <p class="lead todo">
-              This boxplot depicts the relation between key and acousticness. ADD A LOT OF EXPLANATION
+              This boxplot depicts the relation between key and acousticness. Although all the boxplots have similar min and max values, the distribution between varies. For key values 1, 2, 4, 6, 7, 9, 11, 75% of the data is spread below an acousticness value of 0.7.
             </p>
             <br />
             <iframe
               width="800"
               height="650"
-              title="Violin Plot Between Time_Signature and Loudness"
-              src="../static/Charts/ViolinPlot1.html"
+              title="Boxplot Between Key and Acousticness"
+              src="../static/Charts/TwoWayBoxplot.html"
             ></iframe>
             <h3>Violin Plot Between Time_Signature and Danceability</h3>
             <p class="lead todo">
@@ -296,8 +295,9 @@
               location, this machine learning method requires data with
               clustering to perform well. To train an SVM, we used the SVC
               module from the SKLearn library. However, we found this to be too
-              slow, and switched to the more optimized LinearSVC module. IMAGES PLS
+              slow, and switched to the more optimized LinearSVC module.
             </p>
+            <img src="../static/images/svm.png" alt="Support Vector Machine" style="width:700px;height:450px;">
 
             <h3>Random Forest</h3>
             <p class="lead todo">
@@ -314,8 +314,9 @@
               decision trees until they finish, tallying up the results, and
               returning whichever result had the most tallies. Think of a jury
               system: each tree in the forest produces a “jury,” and then the
-              votes are pooled and the winning product is returned. IMAGES PLS
+              votes are pooled and the winning product is returned.
             </p>
+            <img src="../static/images/decision-tree-nodes.png" alt="A decision tree" style="width:700px;height:500px;">
 
             <h3>Neural Nets</h3>
             <p class="lead todo">
