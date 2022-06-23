@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<span style='color:#607d8b'></span><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -59,7 +59,7 @@
       <div class="container px-4 text-center">
         <h1 class="fw-bolder">Song Belong</h1>
         <p class="lead">A Music Classification Product <br> by the Gravity Wells</p>
-        <a class="btn btn-lg btn-light" href="#about">See Project!</a>
+        <a class="btn btn-lg btn-light" href="#about">See Our Project!</a>
       </div>
     </header>
 
@@ -102,7 +102,7 @@
             <h1 id="top-level-heading">🕵 Exploratory Data Analysis (EDA)</h1>
             <br />
             <p class="lead">
-One of our datasets, collected from Kaggle, had 12.8 million songs and their properties. We also needed to have data for individual playlists, which included 1.2 million songs and their acoustic features. After merging these two sets into one large dataframe, we had a list of about 5.8 million songs and their attributes, as well as the playlist they belonged to. While assorting and cleaning our data, we ran into a variety of problems, such as the Cocalc servers crashing due to the size of our data or column names not being uniform. 
+One of our datasets, collected from Kaggle, had 12.8 million songs and their corresponding playlists. We also needed to have data for individual playlists, which included 1.2 million songs and their acoustic features. After merging these two sets into one large dataframe, we had a list of about 5.8 million songs and their attributes, as well as the playlist they belonged to. While assorting and cleaning our data, we ran into a variety of problems, such as the Cocalc servers crashing due to the size of our data or column names not being uniform. 
            </p>
           </div>
           <div class="col-lg-8">
@@ -136,10 +136,8 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
             ></iframe>
             <h3>Scatterplot Between Loudness, Energy, and Acousticness</h3>
             <p class="lead todo">
-              This visualization showcases the relationship between loudness,
-              energy, and acousticness. There is a strong, positive, nonlinear
-              correlation between loudness and energy while there is a negative
-              correlation between acousticness and the other two variables. WHY IS THERE THIS CORRELATION???
+              This visualization shows a strong relationship between loudness and
+              energy. If we look at the correlation matrix we can see that acousticness has no                 strong correlation with either loudness or energy. However when acousticness is               compared with both at once a strong pattern emerges shown color. This shows a more complex pattern that is very hard to see at first, and is not clear on the correlation matrix, but does still exist.
             </p>
             <br />
             <iframe
@@ -153,7 +151,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
               The visualization showcases the relationship between Energy, Time
               Signature, and Loudness. There is a strong positive correlation
               between all three variables. Generally as energy increases, time
-              signature and loudness does as well. SAME AS ABOVE, EXPLAIN POSSIBLE REAASON FOR TREND
+              signature and loudness does as well. A possible explanation for this trend is that a higher time signature might associate with a higher beat which in turn would result in a higher energy and loudness level. 
             </p>
             <br />
             <iframe
@@ -163,14 +161,14 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
             >
             </iframe>
             <h3>
-              Scatterplot Between Valence, Danceability, and Instrumentalness
+              How do instruments affect the enjoyability of a song?
             </h3>
             <p class="lead todo">
-              The visualization showcases the relationship between valence,
+              This visualization showcases the relationship between valence,
               danceability, and instrumentalness. There is a strong positive
               correlation between danceability and valence while there is a
               strong negative correlation between instrumentalness with the two
-              other variables. ALSO SAME AS ABOVE
+              other variables. A potential reason for this is because a large factor of enjoyability comes from being able to sing along to a song. Not only this, but lyrics help to maintain rhythm that is essential when dancing to music. When there are very little words and a lot of instruments in a song, it's likely you can neither sing nor dance to it.
             </p>
             <br />
             <iframe
@@ -228,7 +226,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
             <h3>Three-Way-Boxplot</h3>
             <p class="lead">
               This boxplot depicts the relation between time signature, energy,
-              and key. Within Time_signatures 3, 4, 5, there is fairly even distribution between the data points
+              and key. Within Time_signatures 3, 4, 5, there is fairly even distribution between the data points in regards to key, and energy. However, there is large variability across the distribution of data points in regards to key and energy within time_signatures 0 and 1.
             </p>
             <br />
             <iframe
@@ -264,7 +262,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
             <h3>Violin Plot Between Time_Signature and Danceability</h3>
             <p class="lead todo">
               This violin plot relates time_signature and danceability showing
-              that at a time_signature of 4, 
+              that at a time_signature of 4, there is the largest center and distribution. At time_signatures 1, 3, 5, there is an approximate center at 0.4 and a spread from 0.2 to 0.6.
             </p>
             <br />
             <iframe
@@ -285,10 +283,8 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
           <div class="col-lg-8">
             <h1>Machine Learning</h1>
             <br />
-            <p class="todo">OVERVIEW, TALK ABOUT CHALLENGES WITH BIG DATA (CRASHING COCAALC)</p>
-
             <h3>Support Vector Machine (SVM)</h3>
-            <p class="lead todo">
+            <p class="lead">
               SVM is a supervised machine learning model. It is a classification
               method which groups data points into different categories using a
               hyperplane. Because SVMs classify data point based on their
@@ -300,7 +296,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
             <img src="../static/images/svm.png" alt="Support Vector Machine" style="width:700px;height:450px;">
 
             <h3>Random Forest</h3>
-            <p class="lead todo">
+            <p class="lead">
               Decision trees are a machine learning model that uses a specific
               condition on a "leaf" to classify data. If the condition is met,
               the data is passed to the right leaf, and if the condition is not
@@ -331,8 +327,9 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their pro
               the classifier was able to make predictions. To test and finetune
               some of the hyperparameters, the GridSearchCV algorithm was used
               to test multiple possibilities for hidden layers or alpha values
-              and determine which combination worked best with the data. IMAGES PLS
+              and determine which combination worked best with the data.
             </p>
+            <img src="../static/images/nn.png" alt="A decision tree" style="width:700px;height:500px;">
 
             <h3>Results</h3>
             <p class="lead todo">
