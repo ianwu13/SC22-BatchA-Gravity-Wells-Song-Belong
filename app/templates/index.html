@@ -120,11 +120,11 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               src="../static/Charts/cor_mat.html"
             ></iframe>
             <h3>Pairplots</h3>
-            <p class="lead todo">
+            <p class="lead">
               This visualization is essentially a more in depth correlation
               matrix, showing the correlation between data via multiple scatter
               plots. Diagonals are omitted due to the fact that data will always
-              correlate with itself, making it unnecessary noise. Interesting to note is the fact that "loudness" and "energy" have, at best, a shaky correlation with each other; however, "loudness_pl" and "energy_pl" have a very tight correlation with each other.
+              correlate with itself, making it unnecessary noise. Interesting to note is the fact that "loudness" and "energy" have, at best, a shaky correlation with each other and "loudness_pl" and "energy_pl" have a very tight correlation with each other; however, the correlation between loudness and energy, pl or not, is stronger than that of the correlations between any of the other categories presented. From this, we can see that there is a higher variability in how the acoustic attributes of a song interact with each other when compared to the average acoustic attributes of playlists.
             <br />
             <iframe
               width="1050"
@@ -132,9 +132,9 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               src="../static/Charts/Scatter_Matrix.html"
             ></iframe>
             <h3>Scatterplot Between Loudness, Energy, and Acousticness</h3>
-            <p class="lead todo">
+            <p class="lead">
               This visualization shows a strong relationship between loudness and
-              energy. If we look at the correlation matrix we can see that acousticness has no                 strong correlation with either loudness or energy. However when acousticness is                 compared with both at once a strong pattern emerges shown color. This shows a more               complex pattern that is very hard to see at first, and is not clear on the                       correlation matrix, but does still exist. Complex patterns like these that can                   hide in the data can be essential to finding meaningful insights from our data.
+              energy. If we look at the correlation matrix we can see that acousticness has no                 strong correlation with either loudness or energy. However when acousticness is                 compared with both at once a strong pattern emerges shown color. This shows a more               complex pattern that is very hard to see at first, and is not clear on the                       correlation matrix, but does still exist. Complex patterns like these that can                   hide in the data can be essential to finding meaningful insights from our data. This pattern in particular makes intuitive sense, as we know that acoustic songs tend to be slower/quieter.
             </p>
             <br />
             <iframe
@@ -144,7 +144,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             >
             </iframe>
             <h3>Scatterplot Between Energy, Time Signature, and Loudness</h3>
-            <p class="lead todo">
+            <p class="lead">
               The visualization showcases the relationship between Energy, Time
               Signature, and Loudness. There is a strong positive correlation
               between all three variables. Generally as energy increases, time
@@ -191,13 +191,10 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               title="Effects of Loudness and Acousticness on Overall Positivity"
               src="../static/Charts/LOUDvsVALvsACOUSTICNESS.html"
             ></iframe>
-            <h3 CLASS="todo">Dancebility vs Energy</h3>
-            <p class="lead todo">
+            <h3>Dancebility vs Energy</h3>
+            <p class="lead">
               We use a correlation matrix (below) to visualize how danceability,
-              energy and tempo interact with each other. In the graph you can
-              see that when the energy goes up so does the danceability. You can
-              also see that there is high danceability when the tempo is between
-              100 and 150. On the graph there are vertical lines made by the data.
+              energy and tempo interact with each other. In the graph, we can see that although songs with varying levels of energy/temp can have a large spread of danceability, songs with very low energy are typically not very danceable. On the graph there are vertical lines made by the data.
               This shows how many songs use the same tempo in their songs. For
               example, on the graph there is a vertical line when the tempo is 
               100 and also 150.
@@ -226,7 +223,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             <h3>Three-Way-Boxplot</h3>
             <p class="lead">
               This boxplot depicts the relation between time signature, energy,
-              and key. Within Time_signatures 3, 4, 5, there is fairly even distribution between the data points in regards to key, and energy. However, there is large variability across the distribution of data points in regards to key and energy within time_signatures 0 and 1.
+              and key. Within Time_signatures 3, 4, 5, there is fairly even distribution between the data points in regards to key, and energy. However, there is large variability across the distribution of data points in regards to key and energy within time_signatures 0 and 1. One will note that there are no boxplots for time signature 2, this is simply because our dataset did not contain any tracks with a time signature of 2.
             </p>
             <br />
             <iframe
@@ -239,7 +236,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             <p class="lead">
               Violin plots depict the summary statistics and density curves
               between two variables, where a greater width correlates with a greater frequency. This violin plot relates time_signature 
-              loudness. Across all values of time_signature, the distribution of loudness is unimodal and left-skewed. Time_Signature 0 produces the most variability across loudness while time_signature 5 has the least variability. Across all values of time_signature, there is an approximate peak or center at 20.
+              loudness. Across all values of time_signature, the distribution of loudness is unimodal and left-skewed. We can see that variability of loudness decreases as time signature increases, with Time_Signature 0 producing the most variability and time_signature 5 having the least. Across all values of time_signature, there is an approximate peak or center at 20.
             </p>
             <br />
             <iframe
@@ -249,7 +246,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               src="../static/Charts/ViolinPlot1.html"
             ></iframe>
             <h3>Two-Way-Boxplot</h3>
-            <p class="lead todo">
+            <p class="lead">
               This boxplot depicts the relation between key and acousticness. Although all the boxplots have similar min and max values, the distribution between varies. For key values 1, 2, 4, 6, 7, 9, 11, 75% of the data is spread below an acousticness value of 0.7.
             </p>
             <br />
@@ -260,7 +257,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               src="../static/Charts/TwoWayBoxplot.html"
             ></iframe>
             <h3>Violin Plot Between Time_Signature and Danceability</h3>
-            <p class="lead todo">
+            <p class="lead">
               This violin plot relates time_signature and danceability showing
               that at a time_signature of 4, there is the largest center and distribution. At time_signatures 1, 3, 5, there is an approximate center at 0.4 and a spread from 0 to 0.6. The distributions at time_signatures 1 and 3 are bimodal and fairly symmetric. The distributions at time_signature 4 and 5 are both unimodal. However time_signature 4 is left-skewed while time_signature 5 is right_skewed.
             </p>
@@ -293,7 +290,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               module from the SKLearn library. However, we found this to be too
               slow, and switched to the more optimized LinearSVC module.
             </p>
-            <img src="../static/images/svm.png" alt="Support Vector Machine" style="width:700px;height:450px;">
+            <img src="../static/images/svm.png" alt="Support Vector Machine" style="height:400;">
 
             <h3>Random Forest</h3>
             <p class="lead">
@@ -312,7 +309,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               system: each tree in the forest produces a “jury,” and then the
               votes are pooled and the winning product is returned.
             </p>
-            <img src="../static/images/decision-tree-nodes.png" alt="A decision tree" style="width:700px;height:500px;">
+            <img src="../static/images/decision-tree-nodes.png" alt="A decision tree" style="height:400;">
 
             <h3>Neural Nets</h3>
             <p class="lead todo">
@@ -329,7 +326,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               to test multiple possibilities for hidden layers or alpha values
               and determine which combination worked best with the data.
             </p>
-            <img src="../static/images/nn.png" alt="A decision tree" style="width:700px;height:500px;">
+            <img src="../static/images/nn.png" alt="A decision tree" style="height:400;">
 
             <h3>Results</h3>
             <p class="lead todo">
