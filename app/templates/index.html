@@ -58,7 +58,7 @@
     <header class="bg-secondary bg-gradient text-white tmp">
       <div class="container px-4 text-center">
         <h1 class="fw-bolder">Song Belong</h1>
-        <p class="lead">A Music Classification Product <br> by the Gravity Wells</p>
+        <p class="lead">A Music Classification Product <br> by the Gravity Wells team</p>
         <a class="btn btn-lg btn-light" href="#about">See Our Project!</a>
       </div>
     </header>
@@ -309,7 +309,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               system: each tree in the forest produces a “jury,” and then the
               votes are pooled and the winning product is returned.<br /><br />
 
-              When running our random forest model, a few hyperparameters were taken into account, such as the number of decision trees and the maximum depth of each tree. We found that with a higher number of trees we would get much higher accuracy at the cost of computing power. Other arguments were given that specified the minimum number of decisions at each branch and tree, as well as the maximum depth of a tree. We found that these parameters had very little effect on performance, though, and decided they weren’t worth the computational power. Our best accuracy, achieved through a high number of trees and a moderate depth, sat at around 59%, the highest accuracy of any ML model used.
+              When running our random forest model, a few hyperparameters were taken into account, such as the number of decision trees and the maximum depth of each tree. We found that with a higher number of trees we would get much higher accuracy at the cost of computing power. Other arguments were given that specified the minimum number of decisions at each branch and tree, as well as the maximum depth of a tree. We found that these parameters had very little effect on performance, though, and decided they weren’t worth the computational power. Our best accuracy, achieved through a high number of trees and a moderate depth, sat at around 59%, the highest accuracy of any ML model used. This accuracy, however, wasn't absolute as decision trees and, by extension, random forests are highly sensitive to any change in data, accuracy measures would sometimes drop. Although it would only typically ever drop by 1%>. While being less than ideal, it wasn't fatal.
             </p>
             <img src="../static/images/decision-tree-nodes.png" alt="A decision tree" style="height:400;">
 
@@ -344,11 +344,16 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             <p class="lead">
               To more deeply explore the results from each model, confusion matrices were generated.
             </p>
-            <img src="../static/images/conf_mat_svm.png" alt="A decision tree" style="height:400;">
-            <img src="../static/images/conf_mat_rf.png" alt="A decision tree" style="height:400;">
-            <img src="../static/images/conf_mat_nn.png" alt="A decision tree" style="height:400;">
-            <p class="lead todo">
-              Describe meaning of each matrix
+            <div class="row gx-5 justify-content-center">
+              <img src="../static/images/conf_mat_svm.png" alt="A decision tree" style="width:260;">
+              <img src="../static/images/conf_mat_rf.png" alt="A decision tree" style="width:260;">
+              <img src="../static/images/conf_mat_nn.png" alt="A decision tree" style="width:260;">
+            </div>
+            <p class="lead">
+              The confusion matrix for SVM shows that negative gets predicted a larger number of times compared to positive. This indicates that there is both a high percentage of true negative and false negative values compared to true positive and false positive. However, compared to the confusion matrices of the other two models, this model has the most even spread across all values<br><br>
+              The matrix for the neural net shows us that the model learned too predict the same result every time in order to get at least 50% right. This is a common problem for machine learning models, as when the model tries to find patterns and make guesses it gets below 50% so it decides that it can get a higher accuracy by guessing the same thing every time, especially since there are only 2 options. This also shows our network's inability to model out more complex relationships in the data.<br><br>
+              The matrix for the random forest model, which produced our best performance, shows a much stronger trend towards predicting true positives and negatives. Although the model still had lower accuracy, we can see that it is still able to at least partially model the relationship between acoustic features for songs and their respective playlists.<br><br>
+              Something ELSE
             </p>
           </div>
         </div>
@@ -362,17 +367,14 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
           <div class="col-lg-8">
             <h2>Conclusion</h2>
             <br />
-            <p class="lead todo">
-              In just 2 weeks, we were able to create a product that can (more
-              or less) accurately predict whether or not a song belongs in a
+            <p class="lead">
+              In just 2 weeks, we were able to create a product that attempts to predict whether or not a song belongs in a
               given playlist. With our limited team size and plenty of technical
               drawbacks, we still persevered and achieved an end result that
-              satisfied our interests. Our project can be a stepping stone to
+              satisfied our interests. Despite the hours spent optimizing parameters, the models' accuracy didn't quite reach our standards due to the unpredictable nature of some of our models, namely random forests. Our project can be a stepping stone to
               greater things, such as true song recommendation or a genre
               classifier. Through this project we were shown the wider world of
-              what is possible with AI. With our newfound knowledge and
-              experience on data exploration and machine learning, this project
-              is only the beginning of our AI careers.
+              what is possible with AI. This project has helped give us necessary experience that will help further our knowledge and understanding in the sub-fields of data science and machine learning.
             </p>
           </div>
         </div>
