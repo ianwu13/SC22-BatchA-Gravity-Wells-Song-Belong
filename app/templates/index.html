@@ -286,7 +286,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               method which groups data points into different categories using a
               hyperplane. Because SVMs classify data point based on their
               location, this machine learning method requires data with
-              clustering to perform well. To train an SVM, we used the SVC
+              clustering to perform well. <br /><br />To train an SVM, we used the SVC
               module from the SKLearn library. However, we found this to be too
               slow, and switched to the more optimized LinearSVC module.
             </p>
@@ -307,32 +307,49 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               decision trees until they finish, tallying up the results, and
               returning whichever result had the most tallies. Think of a jury
               system: each tree in the forest produces a “jury,” and then the
-              votes are pooled and the winning product is returned.
+              votes are pooled and the winning product is returned.<br /><br />
+
+              When running our random forest model, a few hyperparameters were taken into account, such as the number of decision trees and the maximum depth of each tree. We found that with a higher number of trees we would get much higher accuracy at the cost of computing power. Other arguments were given that specified the minimum number of decisions at each branch and tree, as well as the maximum depth of a tree. We found that these parameters had very little effect on performance, though, and decided they weren’t worth the computational power. Our best accuracy, achieved through a high number of trees and a moderate depth, sat at around 59%, the highest accuracy of any ML model used.
             </p>
             <img src="../static/images/decision-tree-nodes.png" alt="A decision tree" style="height:400;">
 
             <h3>Neural Nets</h3>
-            <p class="lead todo">
+            <p class="lead">
               Neural Networks are a subset of machine learning that uses
               algorithms to understand underlying relationships of data. In this
               project, they are being used to understand the relationships
               between various attributes of a song and a playlist to predict
-              whether said song belongs in a playlist. Within the code, the data
-              is first split into random train and test subsets (80-20). From
-              there, the classifier uses the test data to make predictions.
-              After each run, an accuracy score was produced to assess how well
-              the classifier was able to make predictions. To test and finetune
+              whether said song belongs in a playlist.<br /><br />To test and finetune
               some of the hyperparameters, the GridSearchCV algorithm was used
               to test multiple possibilities for hidden layers or alpha values
               and determine which combination worked best with the data.
             </p>
             <img src="../static/images/nn.png" alt="A decision tree" style="height:400;">
+            <!--  <img src="Neural Network Picture.jpeg" alt="A neural network" style="width:700px;height:500px;">  -->
 
             <h3>Results</h3>
-            <p class="lead todo">
-              NEED TO COMPLETELY FINISH ML FINE-TUNING FIRST
+            <p class="lead">
+              Within the code for each of our models, the data
+              is first split into random train and test subsets (80-20). From
+              there, the classifier uses the test data to make predictions.
+              After each run, an accuracy score was produced to assess how well
+              the classifier was able to make predictions.<br /><br />
+              Between our three models, the random forest approach performed the best, as can be seen in the comparison of results below.
             </p>
-            <!--  <img src="Neural Network Picture.jpeg" alt="A neural network" style="width:700px;height:500px;">  -->
+            <iframe
+              width="800"
+              height="400"
+              src="../static/Charts/ml_results.html"
+            ></iframe>
+            <p class="lead">
+              To more deeply explore the results from each model, confusion matrices were generated.
+            </p>
+            <img src="../static/images/conf_mat_svm.png" alt="A decision tree" style="height:400;">
+            <img src="../static/images/conf_mat_rf.png" alt="A decision tree" style="height:400;">
+            <img src="../static/images/conf_mat_nn.png" alt="A decision tree" style="height:400;">
+            <p class="lead todo">
+              Describe meaning of each matrix
+            </p>
           </div>
         </div>
       </div>
