@@ -108,7 +108,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
           <div class="col-lg-8">
             <h3>Correlation Matrix</h3>
             <p class="lead">
-              We use a correlation matrix—shown as a heatmap— to visualize what variables from our
+              We use a correlation matrix—shown as a heatmap — to visualize what variables from our
               dataset have strong interactions with each other. Using this information, we can make estimates about the weight of a value in the learning process or even rid our data of unneeded attributes. In a heatmap, a brighter color translates to a higher correlation between the x and y values. A 1 is a perfect linear correlation (as one value increases, so does the other) and 0 means no correlation at all. You can see strong relationships in pairs like <i>energy and loudness</i> or <i>danceability and valence.</i>
               Our plots below are to visualize and explain some of these correlations.
             </p>
@@ -124,10 +124,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               This visualization is essentially a more in depth correlation
               matrix, showing the correlation between data via multiple scatter
               plots. Diagonals are omitted due to the fact that data will always
-              correlate with itself, making it unnecessary noise. INTERPRET
-              CHART A LITTLE, MAYBE TALK ABOUT ENERGY VS LOUDNESS COMPARED WITH
-              ENERGY_PL VS LOUDNESS_PL
-            </p>
+              correlate with itself, making it unnecessary noise. Interesting to note is the fact that "loudness" and "energy" have, at best, a shaky correlation with each other; however, "loudness_pl" and "energy_pl" have a very tight correlation with each other.
             <br />
             <iframe
               width="1050"
@@ -137,7 +134,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             <h3>Scatterplot Between Loudness, Energy, and Acousticness</h3>
             <p class="lead todo">
               This visualization shows a strong relationship between loudness and
-              energy. If we look at the correlation matrix we can see that acousticness has no                 strong correlation with either loudness or energy. However when acousticness is               compared with both at once a strong pattern emerges shown color. This shows a more complex pattern that is very hard to see at first, and is not clear on the correlation matrix, but does still exist.
+              energy. If we look at the correlation matrix we can see that acousticness has no                 strong correlation with either loudness or energy. However when acousticness is                 compared with both at once a strong pattern emerges shown color. This shows a more               complex pattern that is very hard to see at first, and is not clear on the                       correlation matrix, but does still exist. Complex patterns like these that can                   hide in the data can be essential to finding meaningful insights from our data.
             </p>
             <br />
             <iframe
@@ -163,7 +160,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             <h3>
               How do instruments affect the enjoyability of a song?
             </h3>
-            <p class="lead todo">
+            <p class="lead">
               This visualization showcases the relationship between valence,
               danceability, and instrumentalness. There is a strong positive
               correlation between danceability and valence while there is a
@@ -200,7 +197,10 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
               energy and tempo interact with each other. In the graph you can
               see that when the energy goes up so does the danceability. You can
               also see that there is high danceability when the tempo is between
-              100 and 150. EXPLAIN VERTICAL STRIPES (CERTAIN TEMPOS ARE MORE COMMON)
+              100 and 150. On the graph there are vertical lines made by the data.
+              This shows how many songs use the same tempo in their songs. For
+              example, on the graph there is a vertical line when the tempo is 
+              100 and also 150.
             </p>
             <br />
             <iframe
@@ -262,7 +262,7 @@ One of our datasets, collected from Kaggle, had 12.8 million songs and their cor
             <h3>Violin Plot Between Time_Signature and Danceability</h3>
             <p class="lead todo">
               This violin plot relates time_signature and danceability showing
-              that at a time_signature of 4, there is the largest center and distribution. At time_signatures 1, 3, 5, there is an approximate center at 0.4 and a spread from 0.2 to 0.6.
+              that at a time_signature of 4, there is the largest center and distribution. At time_signatures 1, 3, 5, there is an approximate center at 0.4 and a spread from 0 to 0.6. The distributions at time_signatures 1 and 3 are bimodal and fairly symmetric. The distributions at time_signature 4 and 5 are both unimodal. However time_signature 4 is left-skewed while time_signature 5 is right_skewed.
             </p>
             <br />
             <iframe
